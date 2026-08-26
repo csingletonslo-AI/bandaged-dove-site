@@ -21,6 +21,7 @@
     main:     { kicker: 'Reality / Editorial', name: 'The Main World', sub: 'Fact-checked. Both-sides armor on.', body: 'The default reality — ink black, gauze off-white, peace blue. The serene official shell against which the other three worlds read as departures. The Dove on the real news, sourced before it bleeds. The explainer series lives here too.', img: '/art/p-gop-false.png', bg: '#ECE5D6', ink: '#1c1814', accent: '#3f5a70', font: "'Saira Condensed',sans-serif" },
     rot:      { kicker: "Engraving · The regime’s dream", name: 'Realm of Triumph', sub: "Where he imagines he’s the Hierophant.", body: 'A rendered 19th-century engraving — ornate, ceremonial, period serif. The Dove drops in as a tourist: Hawaiian shirt, neck-strap camera, a REALM OF REALITY passport, IV pole still attached. Reality as the regime would paint it.', img: '/art/p-reflecting.png', bg: '#d8c8a6', ink: '#3a2c16', accent: '#8a6a32', font: "'Playfair Display',serif" },
     domestic: { kicker: "A Dove’s Life · Disability, up close", name: "A Dove’s Life", sub: 'Two people, one disabled, getting through the day.', body: "The warmest, most intimate register. The bandage and the IV aren’t a wound that heals — they’re the permanent condition. The comedy is the coping kind: you laugh because you have to. Never pity, never a lesson.", img: '/art/p-home-sunday.png', bg: '#e8ddca', ink: '#3a2f24', accent: '#8a6f52', font: "'Saira Condensed',sans-serif" },
+    ai:       { kicker: 'AI risk · governance · alignment', name: 'AI Ethics', sub: 'The Dove on the machine question.', body: 'An on-stage witness to AI risk, governance, and alignment. Where a board names living people and pins a number to them, every figure is a real public statement — sourced before it bleeds.', img: '/comics/ai-odds-of-doom.jpg', bg: '#e6e8e6', ink: '#14170f', accent: '#2f6f76', font: "'Saira Condensed',sans-serif" },
     scored:   { kicker: 'Scored Pieces · Music', name: 'The Scored Pieces', sub: 'Original score. Picture cut to the track.', body: 'Short scored films, not static panels. An original score is generated, then the visuals are cut and synced to it. The buried-irony rule applies hardest here: the surface of the track must collide with the subtext of the images — never confirm it.', img: '/art/dove-standing.png', bg: '#15130f', ink: '#f1e9d8', accent: '#c8a24a', font: "'Bricolage Grotesque',sans-serif" }
   };
 
@@ -230,6 +231,11 @@
     });
     $all('[data-skin]').forEach(function (b) {
       b.addEventListener('click', function () { openSkin(b.getAttribute('data-skin')); });
+    });
+    // Bonus find: the dove mark (top + bottom) secretly summons the Scored Pieces.
+    $all('[data-scored-egg]').forEach(function (el) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', function () { openSkin('scored'); });
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSkin(); });
 
